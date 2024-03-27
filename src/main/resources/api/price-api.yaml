@@ -1,0 +1,105 @@
+openapi: 3.0.3
+info:
+  title: Price Api
+  description:
+    Price API
+  version: 1.0.0
+servers:
+  - url: 'https://localhost:8080'
+tags:
+  - name: Price
+paths:
+  /price:
+    get:
+      summary: Search price
+      operationId: searchPrice
+      description: Search the priorities price for a given date, productId and brandId
+      tags:
+        - Price
+      parameters:
+        - name: date
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: productId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: brandId
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Response OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceResponse'
+        400:
+          description: Invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        404:
+          description: Price not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        500:
+          description: Internal Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    PriceResponse:
+      type: object
+      properties:
+        product_id:
+          type: integer
+          example: 34455
+        brand_id:
+          type: integer
+          example: 1
+        price_list:
+          type: integer
+          example: 1
+        start_date:
+          type: string
+          example: 2020-12-31-23.59.59
+        end_date:
+          type: string
+          example: 2020-12-31-23.59.59
+        price:
+          type: number
+          format: double
+          example: 35.50
+        curr:
+          type: string
+          example: EUR
+          enum:
+            - EUR
+    ErrorResponse:
+        type: object
+        properties:
+          timestamp:
+            type: string
+            example: 2020-12-31T23:59:59
+          exception:
+            type: string
+            example: Description of the Exception
+          message:
+            type: string
+            example: Description of the message
+
+
+
+
+
