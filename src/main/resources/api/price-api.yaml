@@ -18,20 +18,31 @@ paths:
         - Price
       parameters:
         - name: date
+          description: the date to which the price belongs
           in: query
           required: true
           schema:
             type: string
+            example: 2020-01-01T00:00:00
+            pattern: ^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)((-(\d{2}):(\d{2})|Z)?)$
         - name: productId
+          description: the productId to which the price belongs
           in: query
           required: true
           schema:
-            type: string
+            type: integer
+            format: int64
+            example: 35455
+            minimum: 0
         - name: brandId
+          description: the brandId to which the price belongs
           in: query
           required: true
           schema:
-            type: string
+            type: integer
+            format: int64
+            example: 1
+            minimum: 0
       responses:
         200:
           description: Response OK
