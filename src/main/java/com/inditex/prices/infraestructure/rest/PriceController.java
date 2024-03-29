@@ -16,7 +16,7 @@ public class PriceController implements PriceApi {
     private final PriceService searchService;
 
     @Override
-    public ResponseEntity<PriceResponse> searchPrice(String date, Long productId, Long brandId) {
-        return ResponseEntity.ok(searchService.search(LocalDateTime.parse(date), brandId, productId));
+    public ResponseEntity<PriceResponse> searchPrice(LocalDateTime date, Long productId, Long brandId) {
+        return ResponseEntity.ok(searchService.search(date, brandId, productId));
     }
 }

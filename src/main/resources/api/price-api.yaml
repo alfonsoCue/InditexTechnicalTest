@@ -23,8 +23,8 @@ paths:
           required: true
           schema:
             type: string
+            format: date-time
             example: 2020-01-01T00:00:00
-            pattern: ^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)((-(\d{2}):(\d{2})|Z)?)$
         - name: productId
           description: the productId to which the price belongs
           in: query
@@ -84,9 +84,11 @@ components:
           example: 1
         start_date:
           type: string
+          format: date-time
           example: 2020-12-31-23.59.59
         end_date:
           type: string
+          format: date-time
           example: 2020-12-31-23.59.59
         price:
           type: number
@@ -102,6 +104,7 @@ components:
         properties:
           timestamp:
             type: string
+            format: date-time
             example: 2020-12-31T23:59:59
           exception:
             type: string

@@ -36,7 +36,7 @@ public class PriceControllerAdvice extends ResponseEntityExceptionHandler {
         ErrorResponse error = new ErrorResponse();
         error.setException(exception.getClass().getSimpleName());
         error.setMessage(exception.getMessage());
-        error.setTimestamp(LocalDateTime.now().toString());
+        error.setTimestamp(LocalDateTime.now());
 
         return ResponseEntity.status(httpStatus).body(error);
     }
