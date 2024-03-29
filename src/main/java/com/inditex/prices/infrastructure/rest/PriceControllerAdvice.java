@@ -1,4 +1,4 @@
-package com.inditex.prices.infraestructure.rest;
+package com.inditex.prices.infrastructure.rest;
 
 import com.inditex.prices.domain.exception.PriceNotFoundException;
 import com.inditex.prices.infrastructure.model.ErrorResponse;

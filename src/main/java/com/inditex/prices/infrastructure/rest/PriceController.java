@@ -1,4 +1,4 @@
-package com.inditex.prices.infraestructure.rest;
+package com.inditex.prices.infrastructure.rest;
 
 import com.inditex.prices.application.PriceService;
 import com.inditex.prices.infrastructure.api.PriceApi;

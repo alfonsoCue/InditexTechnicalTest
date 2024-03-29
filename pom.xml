@@ -98,8 +98,8 @@
                                 ${project.basedir}/src/main/resources/api/price-api.yaml
                             </inputSpec>
                             <generatorName>spring</generatorName>
-                            <apiPackage>com.inditex.prices.infrastructure.api</apiPackage>
-                            <modelPackage>com.inditex.prices.infrastructure.model</modelPackage>
+                            <apiPackage>com.inditex.prices.infrastructure.rest.api</apiPackage>
+                            <modelPackage>com.inditex.prices.infrastructure.rest.model</modelPackage>
                             <supportingFilesToGenerate>
                                 ApiUtil.java
                             </supportingFilesToGenerate>
@@ -140,6 +140,11 @@
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
                             <version>${mapstruct.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.hibernate.orm</groupId>
+                            <artifactId>hibernate-jpamodelgen</artifactId>
+                            <version>6.4.4.Final</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
