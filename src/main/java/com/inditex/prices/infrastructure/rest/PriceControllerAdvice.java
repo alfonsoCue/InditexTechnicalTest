@@ -1,7 +1,7 @@
 package com.inditex.prices.infrastructure.rest;
 
 import com.inditex.prices.domain.exception.PriceNotFoundException;
-import com.inditex.prices.infrastructure.model.ErrorResponse;
+import com.inditex.prices.infrastructure.rest.model.ErrorResponse;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

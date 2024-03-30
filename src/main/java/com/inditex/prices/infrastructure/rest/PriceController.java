@@ -1,8 +1,8 @@
 package com.inditex.prices.infrastructure.rest;
 
 import com.inditex.prices.application.PriceService;
-import com.inditex.prices.infrastructure.api.PriceApi;
-import com.inditex.prices.infrastructure.model.PriceResponse;
+import com.inditex.prices.infrastructure.rest.api.PriceApi;
+import com.inditex.prices.infrastructure.rest.model.PriceResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

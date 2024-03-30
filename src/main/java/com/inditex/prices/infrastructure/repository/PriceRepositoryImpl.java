@@ -31,6 +31,6 @@ public class PriceRepositoryImpl implements PriceRepository {
 
         return jpaPriceRepository.findAll(spec).stream()
                 .findFirst()
-                .orElseThrow(() -> new PriceNotFoundException(String.format("Not prices found for date: %s, brandId: %s, productId: %s", date, brandId, productId)));
+                .orElseThrow(PriceNotFoundException::new);
     }
 }

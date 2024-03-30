@@ -92,7 +92,7 @@ components:
           example: 2020-12-31-23.59.59
         price:
           type: number
-          format: double
+          format: float
           example: 35.50
         curr:
           type: string
