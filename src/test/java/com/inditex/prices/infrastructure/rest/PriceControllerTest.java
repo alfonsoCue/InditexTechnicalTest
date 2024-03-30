@@ -110,4 +110,16 @@ public class PriceControllerTest {
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.exception").value("PriceNotFoundException"));
     }
+    @Test
+    void getPrice_when_internal_error_status_INTERNAL_SERVER_ERROR() throws Exception {
+
+        when(priceService.search(any(), any(), any())).thenThrow(new RuntimeException());
+
+        mockMvc.perform(get("/price")
+                        .param("date", "2025-06-14T10:00:00")
+                        .param("productId", "35455")
+                        .param("brandId", "1"))
+                .andExpect(status().isInternalServerError());
+                //.andExpect(jsonPath("$.exception").value("PriceNotFoundException"));
+    }
 }

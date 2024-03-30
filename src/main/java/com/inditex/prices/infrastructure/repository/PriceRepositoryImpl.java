@@ -1,8 +1,8 @@
 package com.inditex.prices.infrastructure.repository;
 
-import com.inditex.prices.domain.Price;
+import com.inditex.prices.domain.model.Price;
 import com.inditex.prices.domain.PriceRepository;
-import com.inditex.prices.domain.Price_;
+import com.inditex.prices.domain.model.Price_;
 import com.inditex.prices.domain.exception.PriceNotFoundException;
 import jakarta.persistence.criteria.Predicate;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.inditex.prices.domain;
+package com.inditex.prices.domain.model;
 
 
 import jakarta.persistence.*;
