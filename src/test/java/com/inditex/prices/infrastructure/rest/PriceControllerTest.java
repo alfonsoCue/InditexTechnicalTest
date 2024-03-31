@@ -120,6 +120,5 @@ public class PriceControllerTest {
                         .param("productId", "35455")
                         .param("brandId", "1"))
                 .andExpect(status().isInternalServerError());
-                //.andExpect(jsonPath("$.exception").value("PriceNotFoundException"));
     }
 }

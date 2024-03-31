@@ -33,7 +33,7 @@ public class PriceControllerIntegrationTest {
                 .andExpect(jsonPath("$.start_date").value("2020-06-14T00:00:00"))
                 .andExpect(jsonPath("$.end_date").value("2020-12-31T23:59:59"))
                 .andExpect(jsonPath("$.price").value(35.5))
-                .andExpect(jsonPath("$.curr").value("EUR"));
+                .andExpect(jsonPath("$.currency").value("EUR"));
     }
     @Test
     @DisplayName("Test 2: petición a las 16:00 del día 14 del producto 35455 para la brand 1 (ZARA)")
@@ -50,7 +50,7 @@ public class PriceControllerIntegrationTest {
                 .andExpect(jsonPath("$.start_date").value("2020-06-14T15:00:00"))
                 .andExpect(jsonPath("$.end_date").value("2020-06-14T18:30:00"))
                 .andExpect(jsonPath("$.price").value(25.45))
-                .andExpect(jsonPath("$.curr").value("EUR"));
+                .andExpect(jsonPath("$.currency").value("EUR"));
     }
     @Test
     @DisplayName("Test 3: petición a las 21:00 del día 14 del producto 35455 para la brand 1 (ZARA)")
@@ -67,7 +67,7 @@ public class PriceControllerIntegrationTest {
                 .andExpect(jsonPath("$.start_date").value("2020-06-14T00:00:00"))
                 .andExpect(jsonPath("$.end_date").value("2020-12-31T23:59:59"))
                 .andExpect(jsonPath("$.price").value(35.5))
-                .andExpect(jsonPath("$.curr").value("EUR"));
+                .andExpect(jsonPath("$.currency").value("EUR"));
     }
     @Test
     @DisplayName("Test 4: petición a las 10:00 del día 15 del producto 35455 para la brand 1 (ZARA)")
@@ -84,7 +84,7 @@ public class PriceControllerIntegrationTest {
                 .andExpect(jsonPath("$.start_date").value("2020-06-15T00:00:00"))
                 .andExpect(jsonPath("$.end_date").value("2020-06-15T11:00:00"))
                 .andExpect(jsonPath("$.price").value(30.5))
-                .andExpect(jsonPath("$.curr").value("EUR"));
+                .andExpect(jsonPath("$.currency").value("EUR"));
     }
     @Test
     @DisplayName("Test 5: petición a las 21:00 del día 16 del producto 35455 para la brand 1 (ZARA)")
@@ -101,7 +101,7 @@ public class PriceControllerIntegrationTest {
                 .andExpect(jsonPath("$.start_date").value("2020-06-15T16:00:00"))
                 .andExpect(jsonPath("$.end_date").value("2020-12-31T23:59:59"))
                 .andExpect(jsonPath("$.price").value(38.95))
-                .andExpect(jsonPath("$.curr").value("EUR"));
+                .andExpect(jsonPath("$.currency").value("EUR"));
     }
     @Test
     @DisplayName("Test 6: petición con una fecha sin precios")

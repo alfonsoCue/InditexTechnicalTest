@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name ="prices")
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor(force = true)
 public class Price {
 
@@ -39,7 +39,7 @@ public class Price {
     private final Float price;
 
     @Column(name = "curr")
-    private final String curr;
+    private final String currency;
 
 }
 
