@@ -2,7 +2,13 @@
 
 ## Description
 This project is a technical test for Inditex. It's consist in an API-Rest to access a products prices according to some
-parameters. You can have more info about the API-Rest [here](#how-to-run-the-project)
+parameters.
+Some methodologies used in the projects are: 
+- DDD
+- Hexagonal Architecture
+- API-First
+
+You can have more info about the API-Rest [here](#how-to-runtest-the-project)
 
 ## Stack
  - **`IDE`**: IntelliJ IDEA
