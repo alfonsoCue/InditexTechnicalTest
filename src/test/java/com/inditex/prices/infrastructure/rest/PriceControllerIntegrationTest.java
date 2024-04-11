@@ -26,16 +26,17 @@ public class PriceControllerIntegrationTest {
             "2020-06-15T10:00:00, 35455, 1, 35455, 1, 3, 2020-06-15T00:00:00, 2020-06-15T11:00:00, 30.5, EUR",
             "2020-06-16T21:00:00, 35455, 1, 35455, 1, 4, 2020-06-15T16:00:00, 2020-12-31T23:59:59, 38.95, EUR"
     })
-    void givenParameter_whenSearchPrice_thenReturn200AndCorrectValues(String inputDate,
-              String inputProductId,
-              String inputBrandId,
-              Integer expectedProductId,
-              Integer expectedBrandId,
-              Integer expectedPriceList,
-              String expectedStartDate,
-              String expectedEndDate,
-              Float expectedPrice,
-              String expectedCurrency) throws Exception
+    void givenParameter_whenSearchPrice_thenReturn200AndCorrectValues(
+            String inputDate,
+            String inputProductId,
+            String inputBrandId,
+            Integer expectedProductId,
+            Integer expectedBrandId,
+            Integer expectedPriceList,
+            String expectedStartDate,
+            String expectedEndDate,
+            Float expectedPrice,
+            String expectedCurrency) throws Exception
     {
         mockMvc.perform(get("/price")
                         .param("date", inputDate)
@@ -69,6 +70,27 @@ public class PriceControllerIntegrationTest {
                         .param("brandId", inputBrandId))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.exception").value(expectedException));
+    }
+    @ParameterizedTest
+    @CsvSource({
+            "9999-99-99T99:99;99, 35455, 1",
+            "2020-06-16T21:00:00, -35455, 2",
+            "2020-06-16T21:00:00, 35456, -1",
+            "null, null, null",
+            "null, null, 1",
+            "null, 35456, 1"
+    })
+    void givenParameters_whenSearchPrice_thenReturnBADREQUEST(
+            String inputDate,
+            String inputProductId,
+            String inputBrandId
+    ) throws Exception
+    {
+        mockMvc.perform(get("/price")
+                        .param("date", inputDate)
+                        .param("productId", inputProductId)
+                        .param("brandId", inputBrandId))
+                .andExpect(status().isBadRequest());
     }
 
 }
