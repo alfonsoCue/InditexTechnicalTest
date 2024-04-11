@@ -1,4 +1,4 @@
-package com.inditex.prices.config;
+package com.inditex.prices.infrastructure.rest.config;
 
 import org.springdoc.core.configuration.SpringDocConfiguration;
 import org.springdoc.core.configuration.SpringDocUIConfiguration;

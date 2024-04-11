@@ -26,6 +26,8 @@ You can have more info about the API-Rest [here](#how-to-runtest-the-project)
    - **`SpringDoc (SwaggerUI)`**
    - **`JaCoCo Report`**
    - **`hibernate-jpamodelgen`**
+   - **`ArchUnit`**
+   
 - #### Generated Coded
   - [**`API-First`**](#API-First) with openapitools
   - [**`Mappers`**](#Mappers) with mapstruct and lombok

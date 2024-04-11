@@ -16,14 +16,17 @@
 
     <properties>
         <java.version>21</java.version>
-        <mapstruct.version>1.5.5.Final</mapstruct.version>
         <swagger-annotations.verison>2.2.20</swagger-annotations.verison>
         <lombok.verison>1.18.30</lombok.verison>
-        <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
+        <springdoc-openapi-starter-webmvc-ui.version>2.3.0</springdoc-openapi-starter-webmvc-ui.version>
+        <junit-jupiter-params.version>5.9.2</junit-jupiter-params.version>
+        <archunit.version>1.2.1</archunit.version>
+
         <openapi-generator-maven-plugin.version>6.6.0</openapi-generator-maven-plugin.version>
-        <jacoco.version>0.8.11</jacoco.version>
-        <openapi.version>2.3.0</openapi.version>
+        <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <hibernate-jpamodelgen.version>6.4.4.Final</hibernate-jpamodelgen.version>
+        <jacoco.version>0.8.11</jacoco.version>
     </properties>
 
     <dependencies>
@@ -66,7 +69,19 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>${openapi.version}</version>
+            <version>${springdoc-openapi-starter-webmvc-ui.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit-jupiter-params.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.tngtech.archunit</groupId>
+            <artifactId>archunit</artifactId>
+            <version>${archunit.version}</version>
+            <scope>test</scope>
         </dependency>
         <!-- Utils generation code End -->
         <!-- Database Init -->
@@ -163,10 +178,9 @@
                 <version>${jacoco.version}</version>
                 <configuration>
                     <excludes>
-                        <exclude>**/infrastructure/rest/model/*</exclude>
+                        <exclude>**/model/*</exclude>
+                        <exclude>**/mapper/*</exclude>
                         <exclude>**/infrastructure/rest/api/*</exclude>
-                        <exclude>**/application/mapper/*</exclude>
-                        <exclude>**/domain/model/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
